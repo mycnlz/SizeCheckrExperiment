@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Maycon Luiz">
+	<title>SizeCheckr Experiments</title>
+
+	<link rel="stylesheet" href="css/fonts.css">
+	<link rel="stylesheet" href="css/shopStyle.css">
+
+	<link rel="stylesheet" href="plugin/sizecheckr.css">
+</head>
+<body>
+	<header>
+		<nav>
+			<p>SizeCheckr Experiments</p>
+		</nav>
+	</header>
+
+	<section class="device">
+		<div class="shopPage">
+			<div class="shopNav">
+				<div class="shopLogo">SHOP</div>
+				<ul>
+					<li data-plugingenre="M">Masculino</li>
+					<li data-plugingenre="F">Feminino</li>
+					<li data-plugingenre="M">Kids</li>
+				</ul>
+			</div>
+			<div class="shopProduct">
+				<div class="shopProductTitle"></div>
+				<div class="shopProductGallery">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="shopProductImage"></div>
+				<div class="shopProductOptions">
+					<div class="shopProductColors">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+					<div class="shopProductSizes">
+						<ul>
+							<li data-pluginsize="XS">XS</li>
+							<li data-pluginsize="S">S</li>
+							<li data-pluginsize="M">M</li>
+							<li data-pluginsize="L">L</li>
+							<li data-pluginsize="XL">XL</li>
+							<li data-pluginsize="XXL">XXL</li>
+						</ul>
+					</div>
+					<div id="pluginButton" class="pluginButton" data-genre="F" data-product="">Provador Virtual</div>
+					<div class="shopProductQtty">
+						<ul>
+							<li></li>
+							<li>△</li>
+							<li>▽</li>
+						</ul>
+					</div>
+					<div class="shopProductBuyButton"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- inicio do plugin -->
+		<div id="pluginLightbox">
+			<iframe id="pluginFrame" width="100%" height="100%" src="" frameborder="0" hspace="0" vspace="0" scrolling="no"></iframe>
+			<div id="pluginClose" title="Fechar"></div>
+		</div>
+		<!-- fim do plugin -->
+	</section>
+
+	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+	<script src="plugin/sizecheckr.js"></script>
+</body>
+</html>
