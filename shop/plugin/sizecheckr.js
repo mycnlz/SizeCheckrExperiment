@@ -7,7 +7,7 @@ var Plugin = (function(){
 	var $menuList = $('.shopNav li');
 	var $sizeList = $('li[data-pluginSize]');
 	var $pluginButton = $('#pluginButton');
-	var urlBase = 'http://localhost:8888/_sizecheckr/client/';
+	var urlBase = 'http://localhost:8888/sizecheckr/client/';
 	var partnerSizes;
 
 	var updateCloseBtnPosition = function(){
