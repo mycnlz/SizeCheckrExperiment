@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="author" content="Maycon Luiz">
+	<title>SizeCheckr Plugin</title>
+
+	<link rel="stylesheet" href="../client/css/fonts.css">
+	<link rel="stylesheet" href="../client/css/plugin.css">
+</head>
+<body>
+	<section class="plugin">
+		<div class="pluginHeader">
+			<img id="partnerLogo" src="" alt="">SHOP
+		</div>
+		<div class="pluginBody">
+			<div class="pluginMeasurements">
+				<div class="pluginSuggestion">
+					<ul>
+						<!-- template added programmatically
+						<li>Tamanho Selecionado</li>
+
+						...
+
+						<li data-tSize="XS">XS</li>
+						-->
+					</ul>
+				</div>
+				<div class="pluginSilhouette">
+					<div class="pluginProductType">TOPS</div>
+					<svg class="zoom" width='480px' height='1020px' viewBox='0 0 480 1020' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
+
+					</svg>
+				</div>
+				<div class="pluginScales">
+					<ul>
+						<!-- template added programmatically
+						<li class="pluginMeasurement">
+							<a href="#" class="pluginBtn"><div></div></a>
+							<div class='pluginRuler'>
+						      	<span class='pluginRulerLabel'>Tórax</span>
+						      	<output class='pluginRangeSize'>130</output>
+						      	<input class='pluginSlider' type='range' min='20' max='180' step='20' value='100'/>
+						    </div>
+						</li>
+
+						...
+
+						<li>
+							<button type="button" class="pluginBtnGo">Personalizar Medida</button>
+						</li>
+						-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+	<script src="../client/js/pluginEngine.js"></script>
+	<script src="../client/js/url.js"></script>
+	<script>
+		var newPath = $(location).attr('href');
+		$(function(){
+			var newPath = $.url('?', newPath);
+		    SizeCheckr.loadSettings(newPath);
+		});
+	</script>
+</body>
+</html>
