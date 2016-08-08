@@ -1,3 +1,28 @@
+/*
+ url() - A simple, lightweight url parser for JavaScript
+
+ Copyright (C) 2011-2012 Websanova http://www.websanova.com
+ https://github.com/websanova/js-url
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+*/
+
 window.url = (function() {
 
     function _t() {
@@ -46,7 +71,7 @@ window.url = (function() {
 
                 if (tmp) {
                     params[tmp[1]] = params[tmp[1]] || [];
-                
+
                     params[tmp[1]][tmp[2]] = field[2];
                 }
                 else {
@@ -121,7 +146,7 @@ window.url = (function() {
 
             // File.
             tmp = _i('/-1', _l.path.substring(1));
-            
+
             if (tmp && (tmp = tmp.match(/(.*?)\.(.*)/))) {
                 _l.file = tmp[0];
                 _l.filename = tmp[1];
