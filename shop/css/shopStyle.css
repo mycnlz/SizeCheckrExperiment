@@ -13,7 +13,7 @@ body,
 html {
 	height: 100%;
 	background-color: #f0f5f9;
-	font-family: 'proximanova-semibold';
+	font-family: 'proximanova-semibold', Tahoma, sans-serif;
 	font-size: 16px;
 	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
@@ -102,7 +102,7 @@ Shop Simulation
 	padding: 0 20px;
 	line-height: 40px;
 	color: #f0f5f9;
-	font-family: 'proximanova-black';
+	font-family: 'proximanova-black', Tahoma, sans-serif;
 	display: inline-block;
 }
 
@@ -207,7 +207,7 @@ Shop Simulation
 	display: inline-block;
 	line-height: 28px;
 	color: #fff;
-	font-family: 'proximanova-extrabold';
+	font-family: 'proximanova-extrabold', Tahoma, sans-serif;
 	font-size: 0.8em;
 	text-align: center;
 	border: 2px solid transparent;
