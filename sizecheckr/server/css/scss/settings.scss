@@ -1,0 +1,57 @@
+// Variables
+$font-stack:     'proximanova-semibold';
+$font-black:     'proximanova-black';
+$font-extrabold: 'proximanova-extrabold';
+
+$first-color:      #8283a7;
+$second-color:     #54546c;
+$third-color:      #6e6e8d;
+$highlight-color:  #a5d296;
+
+$slider-center:    #a3daff;
+$slider-edges:     #fc9d9a;
+
+$my-white:  #ffffff;
+$my-yellow: #F8E71C;
+$my-green:  #50E382;
+$my-blue:   #00E2FF;
+$my-pink:   #FD69E9;
+$my-purple: #A239FF;
+
+// Placeholders
+%primary-transition {
+    -webkit-transition: all 0.5s;
+            transition: all 0.5s;
+}
+
+// Mixins
+@mixin font-face($name, $path, $weight: normal, $style: normal, $exts: eot woff2 woff ttf) {
+	$src: null;
+
+	$extmods: (
+		eot: "?#iefix"
+	);
+
+	$formats: (
+        eot: "embedded-opentype",
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+    @each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        @if $ext == 'eot' {
+            $extraSrc: url(quote($path + $name + "." + $ext));
+            $src: append($src, $extraSrc, space);
+        };
+		$src: append($src, url(quote($path + $name + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		src: $src;
+        font-style: $style;
+		font-weight: $weight;
+	}
+}
