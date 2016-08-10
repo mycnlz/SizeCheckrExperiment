@@ -3,9 +3,9 @@
 Fonts
 ---------------------*/
 
-@include font-face($font-stack, 'sizecheckr/server/css/fonts/');
-@include font-face($font-black, 'sizecheckr/server/css/fonts/');
-@include font-face($font-extrabold, 'sizecheckr/server/css/fonts/');
+@include font-face($font-stack, 'server/css/fonts/');
+@include font-face($font-black, 'server/css/fonts/');
+@include font-face($font-extrabold, 'server/css/fonts/');
 
 /*--------------------
 Partner Side
@@ -29,7 +29,7 @@ Partner Side
 html,
 body {
 	height: 100%;
-	font-family: $font-stack;
+	font-family: $font-stack, Tahoma, sans-serif;
 	font-size: 16px;
 }
 
@@ -40,7 +40,7 @@ body {
 	border-radius: 3px;
 	line-height: 32px;
 	color: $my-white;
-	font-family: $font-stack;
+	font-family: $font-stack, Tahoma, sans-serif;
 	font-size: 0.8em;
 	text-align: left;
 	cursor: pointer;
