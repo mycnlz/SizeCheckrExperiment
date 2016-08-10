@@ -1,3 +1,12 @@
+
+/*--------------------
+Fonts
+---------------------*/
+
+@include font-face($font-stack, 'fonts/');
+@include font-face($font-black, 'fonts/');
+@include font-face($font-extrabold, 'fonts/');
+
 /*--------------------
 Engine Side
 ---------------------*/
@@ -30,7 +39,7 @@ Engine Side
 html,
 body {
 	height: 100%;
-	font-family: 'proximanova-semibold';
+	font-family: $font-stack;
 	font-size: 16px;
 }
 
@@ -38,7 +47,7 @@ body {
 .pluginBody {
 	width: 100%;
 	height: 100%;
-	background-color: #fff;
+	background-color: $my-white;
 }
 
 .pluginHeader,
@@ -51,7 +60,7 @@ body {
 }
 
 .pluginHeader {
-	font-family: 'proximanova-black';
+	font-family: $font-black;
 	box-shadow: 0 0 2px rgba(0,0,0,0.12), 0 0 4px rgba(0,0,0,0.16);
 	z-index: 2;
 }
@@ -65,7 +74,7 @@ body {
 .pluginHeader img.partnerSimulation {
 	width: 100px;
 	height: 32px;
-	background-color: #d4e2ee;
+	background-color: $my-white;
 	border: none;
 	border-radius: 3px;
 }
@@ -81,7 +90,7 @@ body {
 	height: 100%;
 	padding: 0;
 	margin: 0;
-	background-color: #54546c;
+	background-color: $second-color;
 	float: left;
 	z-index: 3;
 }
@@ -97,7 +106,7 @@ body {
 
 .pluginSuggestion ul li:first-child {
 	padding: 10px 7px 8px 7px;
-	color: #a5d296;
+	color: $highlight-color;
 	font-size: 0.6em;
 	line-height: 1;
 	text-transform: uppercase;
@@ -109,22 +118,22 @@ body {
 	margin: 2px auto;
 	border-radius: 50%;
 	line-height: 30px;
-	color: #6e6e8d;
-	font-family: 'proximanova-extrabold';
+	color: $third-color;
+	font-family: $font-extrabold;
 	font-size: 0.8em;
 	text-align: center;
 	cursor: pointer;
 }
 
 .pluginSuggestion ul li:nth-child(n+2):hover {
-	color: #54546c;
-	background-color: #656582;
+	color: $second-color;
+	background-color: $third-color;
 }
 
 .pluginSuggestion ul li:nth-child(n+2):active,
 .pluginSuggestion ul li.active:nth-child(n+2) {
-	color: #a5d296;
-	background-color: #8283a7;
+	color: $highlight-color;
+	background-color: $first-color;
 }
 
 .pluginSilhouette {
@@ -139,6 +148,7 @@ body {
 .pluginSilhouette svg {
 	position: absolute;
 	z-index: 0;
+	@extend %primary-transition;
 }
 
 .pluginSilhouette svg.zoom {
@@ -214,8 +224,8 @@ body {
 	position: absolute;
 	top: 0;
 	padding: 10px;
-	color: #54546c;
-	background-color: #8283a7;
+	color: $second-color;
+	background-color: $first-color;
 	font-size: 0.6em;
 	line-height: 1;
 	text-transform: uppercase;
@@ -226,7 +236,7 @@ body {
 .pluginScales {
 	width: 100%;
 	height: 142px;
-	background-color: #fff;
+	background-color: $my-white;
 	position: absolute;
 	bottom: 0;
 	box-shadow: -1px 0 1px rgba(0,0,0,0.03), -2px 0 4px rgba(0,0,0,0.06);
@@ -253,88 +263,12 @@ body {
 	border-top: none;
 }
 
-.pluginBtn {
-	width: 44px;
-	height: 44px;
-	float: left;
-}
-
-.pluginBtn div {
-	width: 28px;
-	height: 28px;
-	margin: 8px;
-	border-radius: 3px;
-	background-color: rgba(240,245,249,0.5);
-	background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDgwLjg1MyA4MC44NTQiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDgwLjg1MyA4MC44NTQ7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8cGF0aCBkPSJNNzkuNzA4LDQwLjQzOGMwLTAuMTQyLTAuMDYxLTAuMjU4LTAuMDc2LTAuMzk0Yy0wLjAyNy0zLjA3NS0wLjI2MS02LjE4My0wLjc5OS05LjI3OCAgIGMtMi40NTEtMTQuMTU5LTkuMDIzLTI1LjIzNy0xOC4wNS0zMC4zOTdDNjAuMzcyLDAuMTI4LDU5Ljg5LDAsNTkuMzkxLDBIMjYuODQzYy0xLjI3MiwwLTIuMzgzLDAuODUxLTIuNzA4LDIuMDg0ICAgYy0wLjMyMiwxLjIyNywwLjIyLDIuNTIxLDEuMzE5LDMuMTQ2YzYuMDI3LDMuNDUzLDEwLjg4NiwxMC42MjcsMTMuNjYyLDE5Ljc0M0gyMC41MTVjLTAuNTUyLDAtMS4wMzMsMC4yLTEuNDcyLDAuNDc3ICAgYy0xLjc4MS0wLjA2OC0zLjU4NiwwLjI5LTUuMzEzLDEuMTU1QzQuNjYsMzEuMTI1LTAuNjI1LDQ1LjE5OCwxLjY4OCw1OC42MzdjMS42OTQsOS44MTIsNi4zNjEsMTcuMzAzLDEyLjc5MywyMC41NjYgICBjMi4xNzgsMS4xMDQsNC40ODIsMS42NSw2LjgwNywxLjY1YzEuMDYsMCwyLjEyNC0wLjExOSwzLjE4Mi0wLjM0OGwzNS4yMzctMS4wNTljMC40MDYtMC4wMTEsMC44MDQtMC4xMTQsMS4xNjQtMC4yOTUgICBjMTEuMzM1LTUuNjc0LDE4LjY4NS0yMS40MzksMTguNzU1LTM4LjM0M0M3OS42NTYsNDAuNjg0LDc5LjcwOCw0MC41NjksNzkuNzA4LDQwLjQzOHogTTI1LjgzNCw3NC4xNDYgICBjLTAuNjg5LDAuMzQ0LTEuMzc1LDAuNjAzLTIuMDUyLDAuNzk5bC0yLjI5MSwwLjA2NWMtMC4zNjQsMC4wMTEtMC43MTYsMC4wOTktMS4wMzYsMC4yMzVjLTEuMTYtMC4xMTQtMi4zMDUtMC40NTQtMy40MzctMS4wMjggICBjLTQuNzY3LTIuNDE0LTguNDMyLTguNTg2LTkuODA3LTE2LjUxNUM1LjM2LDQ2LjkzOCw5LjQ5NCwzNC45OTksMTYuMjM3LDMxLjYzNmMxLjYxMy0wLjgwMiwzLjIwNC0wLjgxMiw0LjcyMS0wLjA0NiAgIGMyLjc2OSwxLjQwNiw0LjkxNCw1LjA4OSw1LjczMyw5Ljg1NGMxLjIzMyw3LjE0Ny0xLjcwMiwxMy44MzQtNS4yMjcsMTUuNTljLTAuNzUyLDAuMzc4LTEuNDI1LDAuMzg5LTIuMTE1LDAuMDM4ICAgYy0xLjE0Ni0wLjU4LTIuNTcxLTIuMzQ4LTMuMTMtNS41N2MtMC42ODMtMy45NjEsMC45MTItNy45NTYsMi43OTYtOC44OTZjMS4zODktMC42OSwxLjk1NC0yLjM3LDEuMjY1LTMuNzU1ICAgYy0wLjY5LTEuMzg3LTIuMzc2LTEuOTU0LTMuNzU0LTEuMjY0Yy00LjMzMSwyLjE1MS02Ljg5Miw4LjY4NS01LjgyNywxNC44NjdjMC43ODUsNC41NDgsMy4wMTksOC4wNTUsNi4xMzEsOS42MzEgICBjMi4yNjksMS4xNDksNC44MDcsMS4xMzgsNy4xMzktMC4wMzJjNi4xOC0zLjA3Niw5LjgwNi0xMi41NDksOC4yNDgtMjEuNTY1Yy0wLjY4OC0zLjk5LTIuMTkyLTcuMzEtNC4xOTctOS44OTRINDAuNTEgICBjMC4wNywwLjM4NiwwLjE3MiwwLjc1LDAuMjQsMS4xNDRDNDMuODIyLDQ5LjQ3MiwzNy4xMjUsNjguNDk4LDI1LjgzNCw3NC4xNDZ6IE01OC44OTgsNzMuODY2bC0yNC4yNTcsMC43MzggICBDNDQuMjMsNjUuMjgsNDkuMjEyLDQ3LjcxLDQ2LjI4LDMwLjc2NmMtMS43OTgtMTAuNDQzLTUuODUtMTkuMjEyLTExLjQ3NC0yNS4xNjNoMjMuODE0YzMuNzczLDIuMzQ3LDcuMDU3LDYuMTg2LDkuNjQyLDExLjAyMSAgIEg1Mi4zODdjLTEuNTM5LDAtMi44MDEsMS4yNTYtMi44MDEsMi44MDFjMCwxLjU0NywxLjI2MiwyLjgwMiwyLjgwMSwyLjgwMmgxOC4zNjljMS4wODMsMi45NDcsMS45NzUsNi4xMTMsMi41NSw5LjQ5MiAgIGMwLjM1LDEuOTYxLDAuNTIxLDMuOTM5LDAuNjI5LDUuOTE4SDU3LjI4NmMtMS41NCwwLTIuODAyLDEuMjU2LTIuODAyLDIuODAxYzAsMS41NDMsMS4yNjIsMi44MDEsMi44MDIsMi44MDFoMTYuNjE3ICAgYy0wLjI5NCw1LjQ4NC0xLjQwMSwxMC43MzctMy4yMDcsMTUuNDFoLTE4LjMyYy0xLjUzOCwwLTIuODAyLDEuMjU4LTIuODAyLDIuODAyYzAsMS41NDMsMS4yNjQsMi44MDIsMi44MDIsMi44MDJoMTUuNjMgICBDNjUuNTYzLDY4LjQ3Nyw2Mi41MSw3MS45MDYsNTguODk4LDczLjg2NnoiIGZpbGw9IiM4MjgzYTciLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 22px;
-	transform: rotateZ(90deg);
-}
-
-.pluginBtn div:hover {
-	background-color: #f0f5f9;
-}
-
-.pluginScales a.pluginBtnFB {
-	width: 110px;
-	height: 32px;
-	line-height: 32px;
-	border-radius: 3px;
-	background-color: #3b5998;
-	font-family: 'proximanova-semibold';
-	font-size: 0.7em;
-	text-align: left;
-	text-decoration: none;
-	margin-top: 14px;
-	color: #dfe3ee;
-	display: inline-block;
-	float: left;
-}
-
-.pluginScales a.pluginBtnFB div {
-	width: 26px;
-	height: 32px;
-	background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjI0cHgiIGhlaWdodD0iMjRweCIgdmlld0JveD0iMCAwIDkwIDkwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA5MCA5MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPgo8Zz4KCTxwYXRoIGlkPSJGYWNlYm9va19feDI4X2FsdF94MjlfIiBkPSJNOTAsMTUuMDAxQzkwLDcuMTE5LDgyLjg4NCwwLDc1LDBIMTVDNy4xMTYsMCwwLDcuMTE5LDAsMTUuMDAxdjU5Ljk5OCAgIEMwLDgyLjg4MSw3LjExNiw5MCwxNS4wMDEsOTBINDVWNTZIMzRWNDFoMTF2LTUuODQ0QzQ1LDI1LjA3Nyw1Mi41NjgsMTYsNjEuODc1LDE2SDc0djE1SDYxLjg3NUM2MC41NDgsMzEsNTksMzIuNjExLDU5LDM1LjAyNFY0MSAgIGgxNXYxNUg1OXYzNGgxNmM3Ljg4NCwwLDE1LTcuMTE5LDE1LTE1LjAwMVYxNS4wMDF6IiBmaWxsPSIjRkZGRkZGIi8+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==);
-	background-repeat: no-repeat;
-	background-position: 8px center;
-	background-size: 12px;
-	float: left;
-}
-
-.pluginScales button {
-	border: none;
-	outline: 0;
-	background: transparent;
-}
-
-.pluginScales button.pluginBtnGo {
-	width: calc(100% - 115px);
-	height: 32px;
-	line-height: 18px;
-	padding: 6px 16px;
-	margin-top: 14px;
-	border: 2px solid #a5d296;
-	border-radius: 3px;
-	font-family: 'proximanova-regular';
-	font-size: 1em;
-	text-align: center;
-	color: #a5d296;
-	cursor: pointer;
-	float: right;
-}
-
-.pluginScales button.pluginBtnGo:hover {
-	background-color: #a5d296;
-	color: #54546c;
-}
-
 /*--------------------
 Slider
 ---------------------*/
 
 .pluginRuler {
-	font-family: 'proximanova-semibold';
+	font-family: $font-stack;
 	width: calc(100% - 84px);
 	height: 44px;
 	margin-right: 12px;
@@ -347,7 +281,7 @@ Slider
 	margin-top: 8px;
 	line-height: 13px;
 	font-size: 0.7em;
-	color: #8283a7;
+	color: $first-color;
 }
 
 .pluginRulerLabel {
@@ -359,25 +293,25 @@ Slider
 	width: 8px;
 	height: 8px;
 	margin-right: 4px;
-	background-color: #8283a7;
+	background-color: $first-color;
 	border-radius: 4px;
 	display: inline-block;
 }
 
 .pluginRulerLabelDot.yellow {
-	background-color: #F8E71C;
+	background-color: $my-yellow;
 }
 .pluginRulerLabelDot.green {
-	background-color: #50E382;
+	background-color: $my-green;
 }
 .pluginRulerLabelDot.blue {
-	background-color: #00E2FF;
+	background-color: $my-blue;
 }
 .pluginRulerLabelDot.pink {
-	background-color: #FD69E9;
+	background-color: $my-pink;
 }
 .pluginRulerLabelDot.purple {
-	background-color: #A239FF;
+	background-color: $my-purple;
 }
 
 .pluginRangeSize {
@@ -404,11 +338,11 @@ Slider
   	cursor: pointer;
   	border: 0;
   	border-radius: 3px;
-  	background: -webkit-linear-gradient(left, #fc9d9a, #a3daff, #fc9d9a);
-  	background: linear-gradient(to right, #fc9d9a, #a3daff, #fc9d9a);
+  	background: -webkit-linear-gradient(left, $slider-edges, $slider-center, $slider-edges);
+  	background: linear-gradient(to right, $slider-edges, $slider-center, $slider-edges);
 }
 .pluginRuler input[type=range]::-webkit-slider-thumb {
-	background: #fff;
+	background: $my-white;
 	background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQxIDQxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MSA0MTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0xMSwydjM3YzAsMS4xMDQsMC44OTYsMiwyLDJzMi0wLjg5NiwyLTJWMmMwLTEuMTA0LTAuODk2LTItMi0yUzExLDAuODk1LDExLDJ6IiBmaWxsPSIjZjBmNWY5Ii8+CgkJPHBhdGggZD0iTTI2LDJ2MzdjMCwxLjEwNCwwLjg5NiwyLDIsMnMyLTAuODk2LDItMlYyYzAtMS4xMDQtMC44OTYtMi0yLTJTMjYsMC44OTUsMjYsMnoiIGZpbGw9IiNmMGY1ZjkiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
   	background-repeat: no-repeat;
 	background-position: center;
@@ -423,8 +357,8 @@ Slider
   	margin-top: -9px;
 }
 .pluginRuler input[type=range]:focus::-webkit-slider-runnable-track {
-  	background: -webkit-linear-gradient(left, #fc9d9a, #a3daff, #fc9d9a);
-  	background: linear-gradient(to right, #fc9d9a, #a3daff, #fc9d9a);
+  	background: -webkit-linear-gradient(left, $slider-edges, $slider-center, $slider-edges);
+  	background: linear-gradient(to right, $slider-edges, $slider-center, $slider-edges);
 }
 .pluginRuler input[type=range]::-moz-range-track {
   	width: 100%;
@@ -432,10 +366,10 @@ Slider
   	cursor: pointer;
   	border: 0;
   	border-radius: 3px;
-    background: linear-gradient(to right, #fc9d9a, #a3daff, #fc9d9a);
+    background: linear-gradient(to right, $slider-edges, $slider-center, $slider-edges);
 }
 .pluginRuler input[type=range]::-moz-range-thumb {
-  	background: #ffffff;
+  	background: $my-white;
 	background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQxIDQxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MSA0MTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0xMSwydjM3YzAsMS4xMDQsMC44OTYsMiwyLDJzMi0wLjg5NiwyLTJWMmMwLTEuMTA0LTAuODk2LTItMi0yUzExLDAuODk1LDExLDJ6IiBmaWxsPSIjZjBmNWY5Ii8+CgkJPHBhdGggZD0iTTI2LDJ2MzdjMCwxLjEwNCwwLjg5NiwyLDIsMnMyLTAuODk2LDItMlYyYzAtMS4xMDQtMC44OTYtMi0yLTJTMjYsMC44OTUsMjYsMnoiIGZpbGw9IiNmMGY1ZjkiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
   	background-repeat: no-repeat;
 	background-position: center;
@@ -460,7 +394,7 @@ Slider
   	color: transparent;
 }
 .pluginRuler input[type=range]::-ms-fill-lower {
-  	background: #fff;
+  	background: $my-white;
 	background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQxIDQxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MSA0MTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0xMSwydjM3YzAsMS4xMDQsMC44OTYsMiwyLDJzMi0wLjg5NiwyLTJWMmMwLTEuMTA0LTAuODk2LTItMi0yUzExLDAuODk1LDExLDJ6IiBmaWxsPSIjZjBmNWY5Ii8+CgkJPHBhdGggZD0iTTI2LDJ2MzdjMCwxLjEwNCwwLjg5NiwyLDIsMnMyLTAuODk2LDItMlYyYzAtMS4xMDQtMC44OTYtMi0yLTJTMjYsMC44OTUsMjYsMnoiIGZpbGw9IiNmMGY1ZjkiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
   	background-repeat: no-repeat;
 	background-position: center;
@@ -470,7 +404,7 @@ Slider
   	box-shadow: 0px 1px 4px rgba(0,0,0,0.06);
 }
 .pluginRuler input[type=range]::-ms-fill-upper {
-  	background: #fff;
+  	background: $my-white;
 	background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMS4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQxIDQxIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA0MSA0MTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIyNHB4IiBoZWlnaHQ9IjI0cHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0xMSwydjM3YzAsMS4xMDQsMC44OTYsMiwyLDJzMi0wLjg5NiwyLTJWMmMwLTEuMTA0LTAuODk2LTItMi0yUzExLDAuODk1LDExLDJ6IiBmaWxsPSIjZjBmNWY5Ii8+CgkJPHBhdGggZD0iTTI2LDJ2MzdjMCwxLjEwNCwwLjg5NiwyLDIsMnMyLTAuODk2LDItMlYyYzAtMS4xMDQtMC44OTYtMi0yLTJTMjYsMC44OTUsMjYsMnoiIGZpbGw9IiNmMGY1ZjkiLz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K);
   	background-repeat: no-repeat;
 	background-position: center;
@@ -491,48 +425,28 @@ Slider
   	margin-top: -9px;
 }
 .pluginRuler input[type=range]:focus::-ms-fill-lower {
-  	background: linear-gradient(to right, #fc9d9a, #a3daff, #fc9d9a);
+  	background: linear-gradient(to right, $slider-edges, $slider-center, $slider-edges);
 }
 .pluginRuler input[type=range]:focus::-ms-fill-upper {
-  	background: linear-gradient(to right, #fc9d9a, #a3daff, #fc9d9a);
+  	background: linear-gradient(to right, $slider-edges, $slider-center, $slider-edges);
 }
 
 .pluginRuler .tooltiptext {
     opacity: 0;
-    background-color: #54546c;
+    background-color: $second-color;
     border-radius: 3px;
     padding: 1px 4px;
     position: absolute;
     bottom: 24px;
     left: 12px;
-    color: #fff;
-    font-family: 'proximanova-semibold';
+    color: $my-white;
+    font-family: $font-stack;
     font-size: 0.7em;
     text-align: center;
     z-index: 9;
+	@extend %primary-transition;
 }
 
-
-/*--------------------
-Transitions
----------------------*/
-
-.pluginScales button.pluginBtnGo {
-
-  -webkit-transition: all 0.3s;
-     -moz-transition: all 0.3s;
-      -ms-transition: all 0.3s;
-       -o-transition: all 0.3s;
-          transition: all 0.3s;
-}
-
-.pluginSilhouette svg,
-.pluginRuler .tooltiptext,
 .pluginRuler:hover .tooltiptext {
-
-  -webkit-transition: all 0.5s;
-     -moz-transition: all 0.5s;
-      -ms-transition: all 0.5s;
-       -o-transition: all 0.5s;
-          transition: all 0.5s;
+  @extend %primary-transition;
 }
