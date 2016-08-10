@@ -3,9 +3,9 @@
 Fonts
 ---------------------*/
 
-@include font-face($font-stack, 'server/css/fonts/');
-@include font-face($font-black, 'server/css/fonts/');
-@include font-face($font-extrabold, 'server/css/fonts/');
+@include font-face($font-stack, 'sizecheckr/server/css/fonts/');
+@include font-face($font-black, 'sizecheckr/server/css/fonts/');
+@include font-face($font-extrabold, 'sizecheckr/server/css/fonts/');
 
 /*--------------------
 Partner Side
