@@ -1,5 +1,5 @@
-"use strict";
 var SizeCheckr = (function(){
+    "use strict";
 
     // host the following variables in a webservice could be a better approach,
     // but these data are here only for didactic purposes
@@ -29,9 +29,9 @@ var SizeCheckr = (function(){
                         "<path d='M56.5281688,151.343559 C56.5281688,151.343559 57.5961176,151.206276 59.4660353,150.962648 C60.3989792,150.858236 61.5253629,150.680348 62.8089163,150.46959 C64.0844098,150.222094 65.5049831,149.897256 67.0021263,149.435136 C68.4710596,148.911141 70.0629077,148.309804 71.481466,147.285017 L72.0315603,146.925375 L72.1705951,146.834498 L72.255225,146.757155 L72.5171747,146.527062 C72.8637543,146.215759 73.2163789,145.902522 73.5730335,145.585418 C74.2883576,144.957011 75.0177867,144.313136 75.7613209,143.659593 C77.0730843,142.224892 78.4130577,140.840463 79.799376,139.278147 C81.1675594,137.727432 82.5800727,136.163182 84.1134859,134.647271 L86.3481182,132.425611 C87.1420272,131.694725 87.7424965,130.940637 88.3752058,130.200084 C89.5700993,128.637767 90.5997631,126.984574 91.3291922,125.257905 C92.7417055,121.783298 93.2817249,118.213947 93.7008444,115.149255 C94.1038439,112.078762 94.6156533,109.512928 95.0529078,107.747588 C95.2382876,106.858151 95.4941923,106.181405 95.6211371,105.713484 C95.7642019,105.247496 95.8387568,105 95.8387568,105 C95.8387568,105 95.6654671,106.024787 95.4377723,107.815263 C95.1637327,109.599939 95.0549228,112.167706 94.8292431,115.261401 C94.5793834,118.337695 94.3960186,122.05013 92.9855203,125.865043 C92.2520611,127.750264 91.2385173,129.614215 89.9267539,131.327349 C89.2295647,132.170381 88.5263306,133.040483 87.7747365,133.742365 L85.5542091,135.994962 C84.0731859,137.42773 82.6485826,138.968777 81.2602493,140.507891 C79.8960959,142.037336 78.3163378,143.512642 76.9179295,144.94541 C76.1562604,145.589285 75.3966063,146.196423 74.6429972,146.784225 C74.2661926,147.078126 73.8934181,147.370094 73.5266885,147.658194 L73.2506339,147.872819 L73.0652541,148.012036 L72.9060693,148.102913 L72.279405,148.462555 C70.655317,149.479608 68.906299,150.021004 67.3265409,150.475391 C66.5265869,150.672614 65.7487978,150.81183 65.0133237,150.949113 C64.2738196,151.030322 63.5705854,151.107665 62.9096662,151.179207 C61.5878278,151.260416 60.4392792,151.326157 59.4942453,151.335825 C57.6061926,151.372563 56.5281688,151.343559 56.5281688,151.343559' id='Fill-40' fill='#ffffff'></path>" +
                     "</g>" +
                 "</g>" +
-                "<path d='M163.5,309.5 L317.5,309.5' id='Line1' class='lines' stroke='#F8E71C' stroke-width='7' stroke-linecap='round' stroke-linejoin='bevel' title='Tórax'></path>" +
-                "<path d='M161.5,446.5 L319.5,446.5' id='Line2' class='lines' stroke='#50E382' stroke-width='7' stroke-linecap='round' stroke-linejoin='bevel' title='Cintura'></path>" +
-                "<path d='M149.5,534.5 L331.5,534.5' id='Line3' class='lines' stroke='#00E2FF' stroke-width='7' stroke-linecap='round' stroke-linejoin='bevel' title='Quadril'></path>" +
+                "<path d='M163.5,309.5 L317.5,309.5' id='Line1' class='lines' stroke='#F8E71C' stroke-width='12' stroke-linecap='round' stroke-linejoin='bevel' title='Tórax'></path>" +
+                "<path d='M161.5,446.5 L319.5,446.5' id='Line2' class='lines' stroke='#50E382' stroke-width='12' stroke-linecap='round' stroke-linejoin='bevel' title='Cintura'></path>" +
+                "<path d='M149.5,534.5 L331.5,534.5' id='Line3' class='lines' stroke='#00E2FF' stroke-width='12' stroke-linecap='round' stroke-linejoin='bevel' title='Quadril'></path>" +
             "</g>" +
         "</g>";
 
@@ -56,7 +56,7 @@ var SizeCheckr = (function(){
 
     // the SizeCheckr Plugin Engine
 
-    var api = {}
+    var api = {};
 
     api.getSizeNormalized = function(g, s) {
 
@@ -93,30 +93,30 @@ var SizeCheckr = (function(){
     api.getBodyPartCodesForProduct = function(p){
 
         switch(p){
-            case 'TOPS': return ['tor', 'cin', 'qua']; break;
-            case 'BOTTOMS': return ['cin', 'qua']; break;
-            case 'BELTS': return ['cin']; break;
-            default: return ['tor', 'cin', 'qua']; break;
+            case 'TOPS': return ['tor', 'cin', 'qua'];
+            case 'BOTTOMS': return ['cin', 'qua'];
+            case 'BELTS': return ['cin'];
+            default: return ['tor', 'cin', 'qua'];
         }
     };
 
     api.getBodyPartDescription = function(code){
 
         switch(code){
-            case 'tor': return 'Tórax'; break;
-            case 'cin': return 'Cintura'; break;
-            case 'qua': return 'Quadril'; break;
-            default: ''; break;
+            case 'tor': return 'Tórax';
+            case 'cin': return 'Cintura';
+            case 'qua': return 'Quadril';
+            default: return '';
         }
     };
 
     api.getBodyPartColorRepresentation = function(g, code){
 
         switch(code){
-            case 'tor': return 'yellow'; break;
-            case 'cin': return (g == 'M') ? 'green' : 'pink'; break;
-            case 'qua': return (g == 'M') ? 'blue' : 'purple'; break;
-            default: ''; break;
+            case 'tor': return 'yellow';
+            case 'cin': return (g == 'M') ? 'green' : 'pink';
+            case 'qua': return (g == 'M') ? 'blue' : 'purple';
+            default: return '';
         }
     };
 
@@ -204,7 +204,7 @@ var SizeCheckr = (function(){
         var $measureSliders = $('.pluginSlider');
         var $svgImage = $('.pluginSilhouette svg');
 
-        for (var index = 0; index < $rulers.length; index++) {
+        $rulers.each(function(index){
 
             // on initilization
             var curr = Math.round($measureSliders[index].value, 1);
@@ -212,13 +212,11 @@ var SizeCheckr = (function(){
             var mincurr = Math.round((curr - step), 1);
             $($measureRangeSizes[index]).html(mincurr + 'cm a ' + curr + 'cm');
 
-            var $divSlider = $($rulers[index]);
-            var $bodypartcode = $divSlider.find('.pluginRulerLabelDot').data('bodypart');
-
             // when mouseover or mouseout the slider's parent div
+            var $divSlider = $($rulers[index]);
             $divSlider.mouseover(function(){
-                var $bodypartcode = $(this).find('.pluginRulerLabelDot').data('bodypart');
-                $svgImage.attr('class', 'zoom-' + $bodypartcode);
+                var $bodypartcode = 'zoom-' + $divSlider.find('.pluginRulerLabelDot').data('bodypart');
+                $svgImage.attr('class', $bodypartcode);
             });
             $divSlider.mouseout(function(){
                 $svgImage.attr('class', 'zoom');
@@ -252,14 +250,14 @@ var SizeCheckr = (function(){
                     $tooltip.css("opacity", "0");
                 });
             });
-        };
+        });
     };
 
     api.loadSVG = function(g){
         switch(g){
-            case 'M': return imgM; break;
-            case 'F': return imgF; break;
-            case 'C': return ''; break; // SVG not created yet :(
+            case 'M': return imgM;
+            case 'F': return imgF;
+            case 'C': return ''; // SVG not created yet :(
         }
     };
 
@@ -279,7 +277,7 @@ var SizeCheckr = (function(){
             var active = (settings.s === value) ? "class='active'" : "";
             newList += "<li data-tsize='" + value + "' " + active + ">" + value + "</li>";
         });
-
+        console.log(newList);
         partnerSizes.html(newList);
 
         // load type of product
@@ -306,9 +304,8 @@ var SizeCheckr = (function(){
 
         var sizeList = $('.pluginSuggestion li[data-tsize]');
 
-        for (var index = 0; index < sizeList.length; index++) {
+        sizeList.each(function(index){
             $(sizeList[index]).on('click', function(){
-
                 sizeList.each(function(){
                     $(this).removeClass('active');
                 });
@@ -318,7 +315,7 @@ var SizeCheckr = (function(){
 
                 api.updateSliders(settings);
             });
-        }
+        });
     };
 
     return {

@@ -30,15 +30,19 @@ Partner Side
   box-sizing: border-box;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -o-user-select: none;
   -ms-user-select: none;
+  -o-user-select: none;
   user-select: none; }
 
 html,
 body {
   height: 100%;
   font-family: "proximanova-semibold", Tahoma, sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility; }
 
 .pluginButton {
   height: 32px;
@@ -70,14 +74,18 @@ body {
   background-color: rgba(33, 33, 42, 0.48);
   z-index: 9999;
   display: none;
-  overflow: hidden; }
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1, 1);
+  transform: translateZ(0); }
 
 #pluginContainer {
   width: 600px;
   height: 400px;
+  position: absolute;
   left: 50%;
   top: 50%;
-  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
 #pluginClose {
@@ -98,19 +106,21 @@ body {
   -o-transition: all .2s;
   transition: all .2s; }
   #pluginClose:hover {
+    -webkit-transform: rotateZ(90deg);
     transform: rotateZ(90deg); }
 
 #pluginFrame {
   width: 320px;
   height: 480px;
-  left: 50%;
-  top: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
   border: none;
   background: #ffffff;
   border-radius: 6px;
   box-shadow: 30px 30px 48px rgba(0, 0, 0, 0.24);
-  overflow: hidden; }
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
 
 /*# sourceMappingURL=sizecheckr.css.map */

@@ -1,5 +1,5 @@
-"use strict";
 var Plugin = (function(){
+"use strict";
 
 	var $lightbox = $('#pluginLightbox');
 	var $box = $('#pluginFrame');
@@ -24,7 +24,7 @@ var Plugin = (function(){
 	});
 
 	$lightbox.on('click', function(e){
-		if($box.has(e.target).length == 0 && !$box.is(e.target)){
+		if($box.has(e.target).length === 0 && !$box.is(e.target)){
 			$lightbox.fadeOut(400);
 		}
 	});
@@ -46,7 +46,7 @@ var Plugin = (function(){
 		$menuList.each(function(){
 			if($(this).hasClass('active')){
 				size = $(this).data('plugingenre');
-			};
+			}
 		});
 		return size;
 	};
@@ -58,7 +58,7 @@ var Plugin = (function(){
 			partnerSizes.push($(this).data('pluginsize'));
 			if($(this).hasClass('active')){
 				size = $(this).data('pluginsize');
-			};
+			}
 		});
 		return size;
 	};
@@ -75,7 +75,7 @@ var Plugin = (function(){
 
 		$lightbox.fadeIn(600, function(){
 			updateCloseBtnPosition();
-			$close.fadeIn(400)
+			$close.fadeIn(400);
 		});
 	});
 
