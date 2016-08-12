@@ -47,13 +47,14 @@ h2 {
 	width: 90%;
 	height: 75%;
 	background-color: #fff;
-	top: 50%;
-	left: 50%;
-	position: absolute;
-	transform: translate(-50%, -50%);
 	border-radius: 6px;
 	box-shadow: 30px 30px 48px rgba(31,78,95,0.16);
 	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 /*--------------------
