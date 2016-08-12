@@ -48,7 +48,6 @@ Thumbs.db
 # Sass #
 ########
 .sass-cache
-*.sass-cache
 *.scssc
 *.map
 
@@ -56,6 +55,11 @@ Thumbs.db
 ########
 node_modules
 phantomas
+
+# Jasmine #
+########
+fixtures
+jasmine-2.4.1
 
 # Sublime Text #
 ################

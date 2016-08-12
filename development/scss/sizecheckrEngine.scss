@@ -67,15 +67,15 @@ body {
 		max-height: 32px;
 		border: none;
 		float: left;
-
-		.partnerSimulation {
-			width: 100px;
-			height: 32px;
-			background-color: $my-white;
-			border: none;
-			border-radius: 3px;
-		}
 	}
+}
+
+.partnerSimulation {
+	width: 100px;
+	height: 32px;
+	background-color: $my-white;
+	border: none;
+	border-radius: 3px;
 }
 
 .pluginMeasurements {
@@ -153,67 +153,66 @@ body {
 		position: absolute;
 		z-index: 0;
 		@extend %primary-transition;
-
-		.zoom {
-			width: 100%;
-			height: 100%;
-			top: 25px;
-			left: 0;
-		}
-
-		.zoom-tor,
-		.zoom-cin,
-		.zoom-qua {
-			width: 170%;
-			height: 170%;
-			left: -35%;
-		}
-		.zoom-tor {
-			top: 25px;
-		}
-
-		.zoom-cin {
-			top: -18%;
-		}
-
-		.zoom-qua {
-			top: -35%;
-		}
-	}
-
-	path {
-		.lines  {
-		  	stroke-dasharray: 800;
-		  	stroke-dashoffset: 800;
-			-webkit-animation: drawLine 4s linear infinite;
-			   -moz-animation: drawLine 4s linear infinite;
-			        animation: drawLine 4s linear infinite;
-		}
-
-		#Line1,
-		#Line2,
-		#Line3  {
-			-webkit-animation-delay: 0s;
-			-moz-animation-delay: 0s;
-		}
-
-		#Line1  {
-			animation-delay: 0s;
-		}
-
-		#Line2  {
-			animation-delay: 1s;
-		}
-
-		#Line3  {
-			animation-delay: 2s;
-		}
 	}
 }
 
-@-webkit-keyframes drawLine { from { stroke-dashoffset: 800; } to { stroke-dashoffset: 0; } }
-@-moz-keyframes drawLine { from { stroke-dashoffset: 800; } to { stroke-dashoffset: 0; } }
-@keyframes drawLine { from { stroke-dashoffset: 800; } to { stroke-dashoffset: 0; } }
+.zoom {
+	width: 100%;
+	height: 100%;
+	left: 0;
+}
+
+.zoom,
+.zoom-tor {
+	top: 25px;
+}
+
+.zoom-tor,
+.zoom-cin,
+.zoom-qua {
+	width: 170%;
+	height: 170%;
+	left: -35%;
+}
+
+.zoom-cin {
+	top: -18%;
+}
+
+.zoom-qua {
+	top: -35%;
+}
+
+.lines  {
+	stroke-dasharray: 800;
+	stroke-dashoffset: 800;
+	-webkit-animation: drawLine 4s linear infinite;
+	   -moz-animation: drawLine 4s linear infinite;
+			animation: drawLine 4s linear infinite;
+}
+
+#Line1,
+#Line2,
+#Line3  {
+	-webkit-animation-delay: 0s;
+	-moz-animation-delay: 0s;
+}
+
+#Line1  {
+	animation-delay: 0s;
+}
+
+#Line2  {
+	animation-delay: 1s;
+}
+
+#Line3  {
+	animation-delay: 2s;
+}
+
+@-webkit-keyframes drawLine { 0% { stroke-dashoffset: 800; } 100% { stroke-dashoffset: 0; } }
+@-moz-keyframes drawLine { 0% { stroke-dashoffset: 800; } 100% { stroke-dashoffset: 0; } }
+@keyframes drawLine { 0% { stroke-dashoffset: 800; } 100% { stroke-dashoffset: 0; } }
 
 .pluginProductType {
 	width: 100%;
@@ -295,22 +294,22 @@ Slider
 	background-color: $first-color;
 	border-radius: 4px;
 	display: inline-block;
+}
 
-	.yellow {
-		background-color: $my-yellow;
-	}
-	.green {
-		background-color: $my-green;
-	}
-	.blue {
-		background-color: $my-blue;
-	}
-	.pink {
-		background-color: $my-pink;
-	}
-	.purple {
-		background-color: $my-purple;
-	}
+.yellow {
+	background-color: $my-yellow;
+}
+.green {
+	background-color: $my-green;
+}
+.blue {
+	background-color: $my-blue;
+}
+.pink {
+	background-color: $my-pink;
+}
+.purple {
+	background-color: $my-purple;
 }
 
 .pluginRangeSize {
@@ -441,20 +440,18 @@ Slider
 	}
 }
 
-.pluginRuler {
-	.tooltiptext {
-	    opacity: 0;
-	    background-color: $second-color;
-	    border-radius: 3px;
-	    padding: 1px 4px;
-	    position: absolute;
-	    bottom: 24px;
-	    left: 12px;
-	    color: $my-white;
-	    font-family: $font-stack, Tahoma, sans-serif;
-	    font-size: 0.7em;
-	    text-align: center;
-	    z-index: 9;
-		@extend %primary-transition;
-	}
+.tooltiptext {
+    opacity: 0;
+    background-color: $second-color;
+    border-radius: 3px;
+    padding: 1px 4px;
+    position: absolute;
+    bottom: 24px;
+    left: 12px;
+    color: $my-white;
+    font-family: $font-stack, Tahoma, sans-serif;
+    font-size: 0.7em;
+    text-align: center;
+    z-index: 9;
+	@extend %primary-transition;
 }

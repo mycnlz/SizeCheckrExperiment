@@ -1,4 +1,4 @@
-.pluginSilhouette svg, .pluginRuler .tooltiptext {
+.pluginSilhouette svg, .tooltiptext {
   -webkit-transition: all 0.5s;
   transition: all 0.5s; }
 
@@ -75,12 +75,13 @@ body {
     max-height: 32px;
     border: none;
     float: left; }
-    .pluginHeader img .partnerSimulation {
-      width: 100px;
-      height: 32px;
-      background-color: #ffffff;
-      border: none;
-      border-radius: 3px; }
+
+.partnerSimulation {
+  width: 100px;
+  height: 32px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 3px; }
 
 .pluginMeasurements {
   height: calc(100% - 44px);
@@ -137,55 +138,65 @@ body {
   .pluginSilhouette svg {
     position: absolute;
     z-index: 0; }
-    .pluginSilhouette svg .zoom {
-      width: 100%;
-      height: 100%;
-      top: 25px;
-      left: 0; }
-    .pluginSilhouette svg .zoom-tor,
-    .pluginSilhouette svg .zoom-cin,
-    .pluginSilhouette svg .zoom-qua {
-      width: 170%;
-      height: 170%;
-      left: -35%; }
-    .pluginSilhouette svg .zoom-tor {
-      top: 25px; }
-    .pluginSilhouette svg .zoom-cin {
-      top: -18%; }
-    .pluginSilhouette svg .zoom-qua {
-      top: -35%; }
-  .pluginSilhouette path .lines {
-    stroke-dasharray: 800;
-    stroke-dashoffset: 800;
-    -webkit-animation: drawLine 4s linear infinite;
-    -moz-animation: drawLine 4s linear infinite;
-    animation: drawLine 4s linear infinite; }
-  .pluginSilhouette path #Line1,
-  .pluginSilhouette path #Line2,
-  .pluginSilhouette path #Line3 {
-    -webkit-animation-delay: 0s;
-    -moz-animation-delay: 0s; }
-  .pluginSilhouette path #Line1 {
-    animation-delay: 0s; }
-  .pluginSilhouette path #Line2 {
-    animation-delay: 1s; }
-  .pluginSilhouette path #Line3 {
-    animation-delay: 2s; }
+
+.zoom {
+  width: 100%;
+  height: 100%;
+  left: 0; }
+
+.zoom,
+.zoom-tor {
+  top: 25px; }
+
+.zoom-tor,
+.zoom-cin,
+.zoom-qua {
+  width: 170%;
+  height: 170%;
+  left: -35%; }
+
+.zoom-cin {
+  top: -18%; }
+
+.zoom-qua {
+  top: -35%; }
+
+.lines {
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  -webkit-animation: drawLine 4s linear infinite;
+  -moz-animation: drawLine 4s linear infinite;
+  animation: drawLine 4s linear infinite; }
+
+#Line1,
+#Line2,
+#Line3 {
+  -webkit-animation-delay: 0s;
+  -moz-animation-delay: 0s; }
+
+#Line1 {
+  animation-delay: 0s; }
+
+#Line2 {
+  animation-delay: 1s; }
+
+#Line3 {
+  animation-delay: 2s; }
 
 @-webkit-keyframes drawLine {
-  from {
+  0% {
     stroke-dashoffset: 800; }
-  to {
+  100% {
     stroke-dashoffset: 0; } }
 @-moz-keyframes drawLine {
-  from {
+  0% {
     stroke-dashoffset: 800; }
-  to {
+  100% {
     stroke-dashoffset: 0; } }
 @keyframes drawLine {
-  from {
+  0% {
     stroke-dashoffset: 800; }
-  to {
+  100% {
     stroke-dashoffset: 0; } }
 .pluginProductType {
   width: 100%;
@@ -251,16 +262,21 @@ Slider
   background-color: #8283a7;
   border-radius: 4px;
   display: inline-block; }
-  .pluginRulerLabelDot .yellow {
-    background-color: #F8E71C; }
-  .pluginRulerLabelDot .green {
-    background-color: #50E382; }
-  .pluginRulerLabelDot .blue {
-    background-color: #00E2FF; }
-  .pluginRulerLabelDot .pink {
-    background-color: #FD69E9; }
-  .pluginRulerLabelDot .purple {
-    background-color: #A239FF; }
+
+.yellow {
+  background-color: #F8E71C; }
+
+.green {
+  background-color: #50E382; }
+
+.blue {
+  background-color: #00E2FF; }
+
+.pink {
+  background-color: #FD69E9; }
+
+.purple {
+  background-color: #A239FF; }
 
 .pluginRangeSize {
   float: right;
@@ -364,7 +380,7 @@ Slider
     appearance: none;
     margin-top: -9px; }
 
-.pluginRuler .tooltiptext {
+.tooltiptext {
   opacity: 0;
   background-color: #54546c;
   border-radius: 3px;
@@ -378,4 +394,4 @@ Slider
   text-align: center;
   z-index: 9; }
 
-/*# sourceMappingURL=sizecheckrEngine.css.map */
+/*# sourceMappingURL=sizecheckr-engine.css.map */
